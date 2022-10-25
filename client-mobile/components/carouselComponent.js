@@ -69,7 +69,6 @@ const style = StyleSheet.create({
     marginTop: 50,
     width,
     height,
-    backgroundColor: "blue",
   },
   scroll: { width, height },
   image: { width, height, resizeMode: "cover" },
