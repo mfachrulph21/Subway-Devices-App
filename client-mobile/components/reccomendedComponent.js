@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Text } from "react-native"
+import { Text, Image} from "react-native"
 
 export default function ReccomendedComponent() {
 
