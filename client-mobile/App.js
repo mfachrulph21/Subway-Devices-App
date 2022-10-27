@@ -1,12 +1,15 @@
-import CarouselComponent from "./components/carouselComponent";
-import HomeScreen from "./screens/HomeScreen";
+import * as React from 'react';
+import { NavigationContainer } from "@react-navigation/native";
+import BottomNavigator from "./navigation/BottomNavigation";
+
 
 
 export default function App() {
   return (
     <>
-    {/* <HomeScreen/> */}
-    <CarouselComponent/>
+      <NavigationContainer>
+        <BottomNavigator/>
+      </NavigationContainer>
     </>
   );
 }

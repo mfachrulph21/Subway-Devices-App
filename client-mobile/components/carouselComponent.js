@@ -22,6 +22,7 @@ export default function CarouselComponent() {
   const [state, setState] = useState({
     active: 0,
   });
+  
 
   function changeCarousel({ nativeEvent }) {
     const slide = Math.ceil(
@@ -55,7 +56,7 @@ export default function CarouselComponent() {
                 k === state.active ? style.pagingActiveText : style.pagingText
               }
             >
-              ⬤
+              •
             </Text>
           ))}
         </View>
@@ -69,7 +70,6 @@ const style = StyleSheet.create({
     marginTop: 50,
     width,
     height,
-    backgroundColor: "blue",
   },
   scroll: { width, height },
   image: { width, height, resizeMode: "cover" },

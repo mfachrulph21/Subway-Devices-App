@@ -1,13 +1,14 @@
-import { Text } from "react-native";
+import { View } from "react-native";
 import CarouselComponent from "../components/carouselComponent";
-
+import ReccomendedComponent from "../components/reccomendedComponent";
 
 export default function HomeScreen() {
-    return (
-        <>
-        <Text>ini home screen</Text>
-        <Text>ini home screen</Text>
-        <CarouselComponent/>
-        </>
-    )
+  return (
+    <>
+      <View>
+        <CarouselComponent />
+        <ReccomendedComponent />
+      </View>
+    </>
+  );
 }
