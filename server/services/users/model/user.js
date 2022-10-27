@@ -1,3 +1,4 @@
+const { ObjectId } = require("mongodb")
 const { getDB } = require("../config/config-mongo")
 
 
@@ -9,9 +10,8 @@ class User {
             
             const user = db.collection('users')
 
-            const data = await user.find().toArray()
-
-            console.log(data, 'ini data')
+            //paramerter 1 untuk ngefilter by value, parameter 2 (projection) untuk exlude field dari hasil return documentnya
+            const data = await user.find({},{projection:{password:false}}).toArray()
 
             return data
             
@@ -19,6 +19,41 @@ class User {
             throw error
         }
     }
+
+    static async findById(id) {
+        try {
+            const db = getDB()
+
+            const user = db.collection('users')
+
+            const data = await user.findOne({
+                _id:ObjectId(id)
+            }, {projection:{password:false}})
+            
+            return data
+            
+        } catch (error) {
+            throw error 
+        }  
+    }
+
+    static async deleteById(id) {
+        try {
+            const db = getDB()
+
+            const user = db.collection('users')
+
+            const data = await user.deleteOne({
+                _id:ObjectId(id)
+            })
+
+            return data
+            
+        } catch (error) {
+            throw error
+        }
+    }
+
 
     static async create(input) {
         try {
@@ -26,8 +61,6 @@ class User {
 
             const user = db.collection('users')
 
-            console.log('masuk sini')
-            console.log(input, 'ini input')
             const data = await user.insertOne(input)
             
             return data
@@ -35,6 +68,7 @@ class User {
             throw error
         }
     }
+
 }
 
 module.exports = User

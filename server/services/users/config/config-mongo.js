@@ -1,16 +1,14 @@
 const { MongoClient } = require("mongodb");
-const uri =
-  "mongodb+srv://alulmuhammad:alul@jakarta.zwiujj7.mongodb.net/test"
-
+const uri ="mongodb+srv://alulmuhammad:alul@jakarta.zwiujj7.mongodb.net/test"
+const dbName = 'subwhyDB'
 const client = new MongoClient(uri);
-
 let db;
 
 async function connect() {
   try {
     await client.connect();
     console.log("connected to mongo db");
-    const dbConnection = client.db("subwhyDB");
+    const dbConnection = client.db(dbName);
     db = dbConnection;
     return dbConnection;
   } catch (error) {
