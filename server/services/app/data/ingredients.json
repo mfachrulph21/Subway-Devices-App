@@ -1,0 +1,74 @@
+[
+    {
+        "id" : 1,
+        "name" : "Spread of cheese"
+    },
+    {
+        "id" : 2,
+        "name" : "Chicken slice"
+    },
+    {
+        "id" : 3,
+        "name" : "Strips or tuna (all served with egg)"
+    },
+    {
+        "id" : 4,
+        "name" : "Meats"
+    },
+    {
+        "id" : 5,
+        "name" : "Veggies"
+    },
+    {
+        "id" : 6,
+        "name" : "Ranch dressing or light Italian"
+    },
+    {
+        "id" : 7,
+        "name" : "A soft flatbread (wrap)"
+    },
+    {
+        "id" : 8,
+        "name" : "Crunchy veggies"
+    },
+    {
+        "id" : 9,
+        "name" : "Mixture of dough"
+    },
+    {
+        "id" : 10,
+        "name" : "Sugar"
+    },
+    {
+        "id" : 11,
+        "name" : "Chocolate Milk"
+    },
+    {
+        "id" : 12,
+        "name" : "Soft bread"
+    },
+    {
+        "id" : 13,
+        "name" : "Scrambled eggs"
+    },
+    {
+        "id" : 14,
+        "name" : "Cheese"
+    },
+    {
+        "id" : 15,
+        "name" : "Carbonated water"
+    },
+    {
+        "id" : 16,
+        "name" : "Hot water"
+    },
+    {
+        "id" : 17,
+        "name" : "Espresso"
+    },
+    {
+        "id" : 18,
+        "name" : "Streamed milk"
+    }
+]

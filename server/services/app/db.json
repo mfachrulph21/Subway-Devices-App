@@ -1,0 +1,221 @@
+{
+    "authors": [
+        {
+            "id":1,
+            "username":"yasmin",
+            "email":"yasmin@gmail.com",
+            "password":"yasmin123",
+            "phoneNumber":"7933612527",
+            "address":"8023 Merry Pass",
+            "role": "Admin"
+        },
+        {
+            "id":2,
+            "username":"fachrul",
+            "email":"fachrul@gmail.com",
+            "password":"7JHHatx6oors",
+            "phoneNumber":"5201359584",
+            "address":"6913 Scoville Avenue",
+            "role" : "User"
+        },
+        {
+            "id":3,
+            "username":"gioia",
+            "email":"gioia@gmail.com",
+            "password":"gioia123",
+            "phoneNumber":"9583689966",
+            "address":"136 Vidon Place",
+            "role": "User"
+        }
+    ],
+    "categories": [
+        {
+            "id":1,
+            "name":"Breakfast",
+            "createdAt":"2021-08-20",
+            "updatedAt":"2021-08-20"
+        },
+        {
+            "id":2,
+            "name":"Salads",
+            "createdAt":"2021-08-20",
+            "updatedAt":"2021-08-20"
+        },
+        {
+            "id":3,
+            "name":"Wraps",
+            "createdAt":"2021-08-20",
+            "updatedAt":"2021-08-20"
+        },
+        {
+            "id":4,
+            "name":"Sides",
+            "createdAt":"2021-08-20",
+            "updatedAt":"2021-08-20"
+        },
+        {
+            "id":5,
+            "name":"Drinks",
+            "createdAt":"2021-08-20",
+            "updatedAt":"2021-08-20"
+        }
+    ],
+    "items": [
+        {
+            "id":1,
+            "name":"Breakfast Strips & Egg",
+            "description":"Let your hunger pangs and taste buds decide from a spread of cheese, chicken slice, breakfast strips or tuna (all served with egg).",
+            "price":"27000",
+            "imgUrl":"https://www.subway.co.id/wp-content/uploads/2021/08/Breakfast-Strip-Egg-680x680.png",
+            "authorId":"1",
+            "categoryId": "1"
+        },
+        {
+            "id":2,
+            "name":"Chicken Slice & Egg",
+            "description":"Let your hunger pangs and taste buds decide from a spread of cheese, chicken slice, breakfast strips or tuna (all served with egg).",
+            "price":"27000",
+            "imgUrl":"https://www.subway.co.id/wp-content/uploads/2021/08/Chicken-Ham-Egg-680x680.png",
+            "authorId":"1",
+            "categoryId": "1"
+        },
+        {
+            "id":3,
+            "name":"Cheese & Egg",
+            "description":"Let your hunger pangs and taste buds decide from a spread of cheese, chicken slice, breakfast strips or tuna (all served with egg).",
+            "price":"24000",
+            "imgUrl":"https://www.subway.co.id/wp-content/uploads/2021/08/Cheese-Egg-680x680.png",
+            "authorId":"1",
+            "categoryId": "1"
+        },
+        {
+            "id":4,
+            "name":"BBQ Chicken",
+            "description":"meats and veggies into a mouth-watering salad made just the way you want it. Top it with ranch dressing or light Italian for a flavourful, satisfying meal.",
+            "price":"54500",
+            "imgUrl":"https://www.subway.co.id/wp-content/uploads/2021/08/Buffalo_Chicken_Salad_JPEG_594x334.jpg",
+            "authorId":"1",
+            "categoryId": "2"
+        },
+        {
+            "id":5,
+            "name":"Steak & Cheese",
+            "description":"meats and veggies into a mouth-watering salad made just the way you want it. Top it with ranch dressing or light Italian for a flavourful, satisfying meal.",
+            "price":"74000",
+            "imgUrl":"https://www.subway.co.id/wp-content/uploads/2021/08/Chipotle_Steak_Melt_Salads_594x334.jpg",
+            "authorId":"1",
+            "categoryId": "2"
+        },
+        {
+            "id":6,
+            "name":"Spicy Italian",
+            "description":"It has a great serving of proteins in a soft flatbread (wrap). Then it gets topped with any crunchy veggies you want.",
+            "price":"48000",
+            "imgUrl":"https://www.subway.co.id/wp-content/uploads/2021/08/Italian_BMT_Wrap_594x334.png",
+            "authorId":"1",
+            "categoryId": "3"
+        },
+        {
+            "id":7,
+            "name":"Tuna Mayo",
+            "description":"It has a great serving of proteins in a soft flatbread (wrap). Then it gets topped with any crunchy veggies you want.",
+            "price":"40500",
+            "imgUrl":"https://www.subway.co.id/wp-content/uploads/2021/08/Tuna_Mayo_Wrap_594x334.jpg",
+            "authorId":"1",
+            "categoryId": "3"
+        },
+        {
+            "id":8,
+            "name":"Double Chocolate Chip Cookie",
+            "description":"As delicious as our sandwiches are, they are even better when paired with the perfect side and drink or even adding a little something extra. With such a variety to choose from, there’s truly something for every taste.",
+            "price":"19500",
+            "imgUrl":"https://www.subway.co.id/wp-content/uploads/2021/08/RPLC-doublechocolatechipcookie-1-680x680.png",
+            "authorId":"1",
+            "categoryId": "4"
+        },
+        {
+            "id":9,
+            "name":"Egg Mayo Toasty",
+            "description":"Want to eat something light but filling? Egg Mayo Toasty is your best bet! Your tummy will be satisfied.",
+            "price":"17500",
+            "imgUrl":"https://www.subway.co.id/wp-content/uploads/2021/09/Egg-Mayo-Toastie-680x680.png",
+            "authorId":"1",
+            "categoryId": "4"
+        },
+        {
+            "id":10,
+            "name":"Carbonated Drinks 16oz",
+            "description":"Complete your delicious Sandwich with drinks and snacks. With a variety of choices such as delicious cookies, savory toasties and refreshing drinks. All ready to make your day more cheerful.",
+            "price":"19000",
+            "imgUrl":"https://www.subway.co.id/wp-content/uploads/2021/09/carbonated-drinks-680x680.png",
+            "authorId":"1",
+            "categoryId": "5"
+        },
+        {
+            "id":11,
+            "name":"Coffee Latte 8oz",
+            "description":"Complete your delicious Sandwich with drinks and snacks. With a variety of choices such as delicious cookies, savory toasties and refreshing drinks. All ready to make your day more cheerful.",
+            "price":"25000",
+            "imgUrl":"https://www.subway.co.id/wp-content/uploads/2021/08/coffee-1-680x680.png",
+            "authorId":"1",
+            "categoryId": "5"
+        } 
+    ],
+    "ingredients": [
+        {
+            "id":1,
+            "name":"a spread of cheese, chicken slice, breakfast strips or tuna (all served with egg).",
+            "ItemId":"1"
+        },
+        {
+            "id":2,
+            "name":"a spread of cheese, chicken slice, breakfast strips or tuna (all served with egg).",
+            "ItemId":"2"
+        },
+        {
+            "id":3,
+            "name":"a spread of cheese, chicken slice, breakfast strips or tuna (all served with egg).",
+            "ItemId":"3"
+        },
+        {
+            "id":4,
+            "name":"meats, veggies, ranch dressing or light Italian for a flavourful.",
+            "ItemId":"4"
+        },
+        {
+            "id":5,
+            "name":"meats, veggies, ranch dressing or light Italian for a flavourful.",
+            "ItemId":"5"
+        },
+        {
+            "id":6,
+            "name":"a soft flatbread (wrap) with any crunchy veggies",
+            "ItemId":"6"
+        },
+        {
+            "id":7,
+            "name":"a soft flatbread (wrap) with any crunchy veggies",
+            "ItemId":"7"
+        },
+        {
+            "id":8,
+            "name":"mixture of dough, sugar, and milk chocolate",
+            "ItemId":"8"
+        },
+        {
+            "id":9,
+            "name":"soft bread with a mixture of scrambled eggs and cheese",
+            "ItemId":"9"
+        },
+        {
+            "id":10,
+            "name":"carbonated water with sugar",
+            "ItemId":"10"
+        },
+        {
+            "id":11,
+            "name":"hot water with espresso and streamed milk",
+            "ItemId":"11"
+        }
+    ]
+  }
