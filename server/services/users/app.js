@@ -10,7 +10,6 @@ app.use(cors())
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true }))
 
-
 app.use('/users', userRouter)
 
 connect().then(() => {
