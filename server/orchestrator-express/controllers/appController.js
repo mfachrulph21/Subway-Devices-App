@@ -1,4 +1,4 @@
-const { default: axios } = require("axios")
+const axios  = require("axios")
 const redis = require("../config/redis")
 
 const appUrl = 'http://localhost:4002'
@@ -9,6 +9,7 @@ class appController {
     static async readAllItems(req, res, next) {
         try {
 
+            console.log('masuk sini orchestrator-express read all items')
             const cacheItem = await redis.get('Items')
 
             if (cacheItem) {
@@ -16,11 +17,12 @@ class appController {
 
                 res.status(200).json(data)
             } else {
+                console.log('masuk sini orchestrator-express read all items (sebelum axios')
                 const { data } = await axios({
                     url: `${appUrl}/items`,
                     method: 'GET'
                 })
-
+                // console.log(data, 'abis axios')
                 const items = JSON.stringify(data)
 
                 await redis.set('items', items)
@@ -29,6 +31,7 @@ class appController {
             }
             
         } catch (error) {
+            console.log(error)
             res.status(500).json(error)
         }
     }
@@ -74,7 +77,7 @@ class appController {
             })
 
             redis.del('items')
-            res.status(201).json(data)
+            res.status(201).json({message: `Item success added!`})
             
         } catch (error) {
             res.status(500).json(error)
@@ -102,8 +105,25 @@ class appController {
             })
 
             redis.del('items')
-            res.status(200).json(data)
+            res.status(200).json({message: `Item with id ${id} success to be edited!`})
 
+        } catch (error) {
+            res.status(500).json(error)
+        }
+    }
+
+    static async deleteItem(req, res, next) {
+        try {
+            const { id } = req.params
+
+            let { data } = await axios({
+                url: `${appUrl}/items/${id}`,
+                method: 'DELETE'
+            })
+
+            redis.del('items')
+            res.status(200).json({message: `Item with id: ${id} success to be deleted`})
+            
         } catch (error) {
             res.status(500).json(error)
         }

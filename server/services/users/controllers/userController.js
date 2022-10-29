@@ -33,7 +33,6 @@ class userController {
 
     static async create(req, res, next) {
         try {
-            console.log('masuk users services add')
             let {username, email, password, role, phoneNumber, address} = req.body
 
             password = createHashFromPassword(password)

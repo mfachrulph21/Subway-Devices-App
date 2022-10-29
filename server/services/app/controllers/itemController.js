@@ -1,8 +1,10 @@
 const { Item, Category, ItemIngredient, Ingredient, sequelize} = require('../models/index')
+
 class itemController {
 
     static async showItems (req, res, next) {
         try {
+            console.log('masuk app controller read all items')
             let item = await Item.findAll({
                 include : [
                     {model: Category},

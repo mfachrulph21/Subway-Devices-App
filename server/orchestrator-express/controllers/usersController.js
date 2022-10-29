@@ -7,8 +7,6 @@ class usersController {
 
     static async readAlluser(req, res, next) {
         try {
-
-            console.log('ini dari orchestator')
             const cacheUser = await redis.get('users')
 
             if(cacheUser){
@@ -63,7 +61,7 @@ class usersController {
             })
 
             redis.del('users')
-            res.status(200).json(data) 
+            res.status(200).json({message: 'User has been deleted!'}) 
         } catch (error) {
             res.status(500).json(error)
         }
