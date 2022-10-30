@@ -1,5 +1,5 @@
 const redis = require("../config/redis");
-const axios = require('axios')
+const axios = require('axios');
 
 const baseUrl =  'http://localhost:4001/users'
 
@@ -76,27 +76,27 @@ const userResolver = {
     Mutation: {
         createUser: async (_,args) => {
             try {
-                let data = await axios({
+                let { data } = await axios({
                     url:`${baseUrl}`,
                     method: 'POST',
                     data: args.inputUser
                 })
 
                 await redis.del('users')
-                return {message: 'User has been created!'}
+                return data
             } catch (error) {
                 console.log(error)
             }
         },
         deleteUser : async (_,args) => {
             try {
-                let data = await axios({
+                let { data } = await axios({
                     url : `${baseUrl}/${args._id}`,
                     method: 'DELETE'
                 })
 
                 await redis.del('users')
-                return {message: 'User has been deleted!'}
+                return data
                 
             } catch (error) {
                 console.log(error)

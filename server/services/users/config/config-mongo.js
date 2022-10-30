@@ -6,7 +6,6 @@ let db;
 
 async function connect() {
   try {
-    console.log('masuk sini')
     await client.connect();
     console.log("connected to mongo db");
     const dbConnection = client.db(dbName);

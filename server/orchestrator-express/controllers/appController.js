@@ -9,25 +9,37 @@ class appController {
     static async readAllItems(req, res, next) {
         try {
 
-            console.log('masuk sini orchestrator-express read all items')
-            const cacheItem = await redis.get('Items')
+            let { name } = req.query
 
-            if (cacheItem) {
-                const data = JSON.parse(cacheItem)
-
-                res.status(200).json(data)
-            } else {
-                console.log('masuk sini orchestrator-express read all items (sebelum axios')
+            if(name) {
                 const { data } = await axios({
-                    url: `${appUrl}/items`,
+                    url: `${appUrl}/items?name=${name}`,
                     method: 'GET'
                 })
-                // console.log(data, 'abis axios')
                 const items = JSON.stringify(data)
-
-                await redis.set('items', items)
-
                 res.status(200).json(data)
+
+            } else {
+                const cacheItem = await redis.get('Items')
+
+                if (cacheItem) {
+                    const data = JSON.parse(cacheItem)
+    
+                    res.status(200).json(data)
+                } else {
+                    const { data } = await axios({
+                        url: `${appUrl}/items`,
+                        method: 'GET'
+                    })
+    
+                    const items = JSON.stringify(data)
+    
+                    await redis.set('items', items)
+    
+                    res.status(200).json(data)
+
+                }
+            
             }
             
         } catch (error) {
@@ -166,10 +178,31 @@ class appController {
             res.status(500).json(error)
         }
     }
-
     
+    static async readAllCategorie (req, res, next) {
+        try {
 
-    
+            const cacheCategories = await redis.get('categories')
+
+            if(cacheCategories) {
+                let data = JSON.parse(cacheCategories)
+                res.status(200).json(data)
+            } else {
+
+                let { data } = await axios({
+                    url: `${appUrl}/categories`,
+                    method: 'GET'
+                })
+
+                await redis.set('categories', JSON.stringify(data))
+                res.status(200).json(data)
+             }
+             
+        } catch (error) {
+            res.status(500).json(error)
+        }
+    }
+
 }
 
 module.exports = appController

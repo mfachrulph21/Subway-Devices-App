@@ -4,16 +4,34 @@ class itemController {
 
     static async showItems (req, res, next) {
         try {
-            console.log('masuk app controller read all items')
-            let item = await Item.findAll({
-                include : [
-                    {model: Category},
-                    {model: Ingredient}
-                ]
-            })
 
-            res.status(200).json(item)
-            
+            const { name } = req.query
+
+            console.log(name, 'ini querynya masuk gak')
+            if(name) {
+                let item = await Item.findAll({
+                    include: [
+                        {model: Category},
+                        {model: Ingredient}
+                    ],
+                    where: {
+                        categoryId: name
+                    }
+                })
+
+                res.status(200).json(item)
+            } else {
+
+                let item = await Item.findAll({
+                    include : [
+                        {model: Category},
+                        {model: Ingredient}
+                    ]
+                })
+    
+                res.status(200).json(item)
+            }
+   
         } catch (error) {
             next(error) 
         }
@@ -49,7 +67,6 @@ class itemController {
             // let userId = req.user.id
 
             let { name, description, price, imgUrl, categoryId, ingredientsChoices, userMongoId } = req.body
-
 
             if(ingredientsChoices.lenght === 0) {
                 throw {
@@ -91,7 +108,7 @@ class itemController {
             await ItemIngredient.bulkCreate(ingredientsChoices, { transaction: t })
 
             await t.commit();
-            res.status(201).json(item)
+            res.status(201).json({message: 'New item has been created!'})
         } catch (error) {
             await t.rollback();
             next(error);
