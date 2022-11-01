@@ -17,7 +17,6 @@ class userController {
     
     static async readById(req, res, next) {
         try {
-            
             const {id} = req.params
 
             const data = await User.findById(id)
@@ -32,7 +31,6 @@ class userController {
 
     static async create(req, res, next) {
         try {
-            
             let {username, email, password, role, phoneNumber, address} = req.body
 
             password = createHashFromPassword(password)

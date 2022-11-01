@@ -1,5 +1,5 @@
 const { MongoClient } = require("mongodb");
-const uri ="mongodb+srv://alulmuhammad:alul@jakarta.zwiujj7.mongodb.net/test"
+const uri ="mongodb+srv://alulmuhammad:alul123@jakarta.zwiujj7.mongodb.net/test"
 const dbName = 'subwhyDB'
 const client = new MongoClient(uri);
 let db;
@@ -17,6 +17,7 @@ async function connect() {
     } else {
       res.status(500).json({ message: "Internal server error" });
     }
+    console.log(error)
   }
 }
 

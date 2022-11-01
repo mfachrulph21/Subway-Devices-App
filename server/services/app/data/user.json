@@ -1,0 +1,29 @@
+[
+    {
+        "id":1,
+        "username":"yasmin",
+        "email":"yasmin@gmail.com",
+        "password":"yasmin123",
+        "phoneNumber":"7933612527",
+        "address":"8023 Merry Pass",
+        "role": "Admin"
+    },
+    {
+        "id":2,
+        "username":"fachrul",
+        "email":"fachrul@gmail.com",
+        "password":"fachrul123",
+        "phoneNumber":"5201359584",
+        "address":"6913 Scoville Avenue",
+        "role" : "User"
+    },
+    {
+        "id":3,
+        "username":"gioia",
+        "email":"gioia@gmail.com",
+        "password":"gioia123",
+        "phoneNumber":"9583689966",
+        "address":"136 Vidon Place",
+        "role": "User"
+    }
+]

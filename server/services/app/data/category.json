@@ -1,0 +1,25 @@
+[
+    {
+        "id":1,
+        "name":"Breakfast"
+    },
+    {
+        "id":2,
+        "name":"Salads"
+    },
+    {
+        "id":3,
+        "name":"Wraps"
+
+    },
+    {
+        "id":4,
+        "name":"Sides"
+
+    },
+    {
+        "id":5,
+        "name":"Drinks"
+    }
+
+]

@@ -1,11 +1,10 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "../screens/HomeScreen";
-import SearchScreen from "../screens/SearchScreen";
-import FavoriteScreen from "../screens/FavoriteScreen";
-import CartScreen from "../screens/CartScreen";
-import {Image, StyleSheet, View, TouchableOpacity, Text} from 'react-native'
-import {Ionicons, MaterialIcons} from '@expo/vector-icons'
+import {StyleSheet} from 'react-native'
+import {Ionicons} from '@expo/vector-icons'
 import COLORS from "../assets/const/colors";
+import StackNavigation from "./StackNavigation";
+
 
 
 const Tab = createBottomTabNavigator();
@@ -19,14 +18,9 @@ export default function BottomNavigator() {
 
             if (route.name === 'Home') {
                 iconName = focused ? 'ios-home' : 'ios-home-outline'
-            } else if (route.name === 'Search') {
-                iconName = focused ? 'ios-search' : 'ios-search-outline'
-            } else if (route.name === 'Favorite') {
-                iconName = focused ? 'heart' : 'heart-outline'
-            } else if (route.name === 'Cart') {
-                iconName = focused ? 'ios-cart' : 'ios-cart-outline'
+            }  else if (route.name === 'StackNavigation') {
+              iconName = focused ? 'fast-food' : 'fast-food-outline'
             }
-
             return <Ionicons name={iconName} size={size} color={color} style={{
                 top: 15
 
@@ -35,6 +29,7 @@ export default function BottomNavigator() {
         tabBarActiveTintColor : COLORS.primaryYellow,
         tabBarInactiveTintColor: COLORS.primary,
         tabBarShowLabel : false,
+        headerShown: false,
         tabBarStyle: {
           position: "absolute",
           bottom: 25,
@@ -49,12 +44,8 @@ export default function BottomNavigator() {
       })
       }
     >
-      <Tab.Screen name="Home" component={HomeScreen} options={{
-
-      }} />
-      <Tab.Screen name="Search" component={SearchScreen} />
-      <Tab.Screen name="Favorite" component={FavoriteScreen} />
-      <Tab.Screen name="Cart" component={CartScreen} />
+      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name ="StackNavigation" component={StackNavigation} />
     </Tab.Navigator>
   );
 }

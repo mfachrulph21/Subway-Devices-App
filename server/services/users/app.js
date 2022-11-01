@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
-const port = 4001
+const port = process.env.PORT || 4001
 const userRouter = require('./routes/index')
 const { connect } = require('./config/config-mongo')
 
@@ -9,7 +9,6 @@ const { connect } = require('./config/config-mongo')
 app.use(cors())
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true }))
-
 
 app.use('/users', userRouter)
 
