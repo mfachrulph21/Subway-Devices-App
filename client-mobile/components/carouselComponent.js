@@ -18,11 +18,9 @@ const images = [
 ];
 
 export default function CarouselComponent() {
-
   const [state, setState] = useState({
     active: 0,
   });
-  
 
   function changeCarousel({ nativeEvent }) {
     const slide = Math.ceil(
@@ -41,6 +39,7 @@ export default function CarouselComponent() {
           pagingEnabled
           horizontal
           onScroll={changeCarousel}
+          scrollEventThrottle={10}
           showsHorizontalScrollIndicator={false}
           style={style.scroll}
         >
@@ -67,16 +66,15 @@ export default function CarouselComponent() {
 
 const style = StyleSheet.create({
   carouselContainer: {
-    marginTop: 50,
     width,
     height,
   },
   scroll: { width, height },
-  image: { width, height, resizeMode: "cover" },
+  image: { width, height, resizeMode: "contain" },
   pagination: {
     flexDirection: "row",
     position: "absolute",
-    bottom: 0,
+    bottom: 15,
     alignSelf: "center",
   },
   pagingText: {
@@ -85,8 +83,9 @@ const style = StyleSheet.create({
     marginBottom: 3,
     margin: 3,
   },
-  pagingActiveText: { 
-    fontSize: width / 30, 
-    color: "#fff", 
-    margin: 3 },
+  pagingActiveText: {
+    fontSize: width / 30,
+    color: "#fff",
+    margin: 3,
+  },
 });

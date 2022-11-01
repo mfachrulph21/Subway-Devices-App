@@ -26,7 +26,7 @@ type User {
     address: String
 }
 
-type Category {
+type category {
     id: ID,
     name: String
 }
@@ -44,8 +44,8 @@ type ItemDetail {
     imgUrl: String,
     userMongoId: String,
     categoryId: ID,
-    Category: [Category],
-    User: [User]
+    Category: category,
+    user: User
 }
 
 type Message {
@@ -81,7 +81,7 @@ input InputEditItem {
 type Query {
     getAllItems(name: Int):[Item],
     getItem(id: ID!): ItemDetail,
-    getAllCategories: [Category],
+    getAllCategories: [category],
     getAllIngredients: [Ingredients]
 
 }
@@ -139,6 +139,11 @@ const itemResolver = {
                     method : 'GET'
                 })
 
+                let { data: user } = await axios({
+                    url: `${usersUrl}/${data.userMongoId}`
+                })
+
+                data.user = user
                 return data
 
             } catch (error) {

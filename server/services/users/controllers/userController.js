@@ -5,7 +5,6 @@ class userController {
 
     static async readAll(req, res, next) {
         try {
-            console.log('masuk users services read all')
             const data = await User.findAll()
             res.status(200).json(data)
 
@@ -18,7 +17,6 @@ class userController {
     
     static async readById(req, res, next) {
         try {
-            console.log('masuk users services read by id')
             const {id} = req.params
 
             const data = await User.findById(id)
@@ -57,7 +55,6 @@ class userController {
     static async delete(req, res, next) {
         try {
 
-            console.log('masuk users services DELETE')
             const {id} = req.params
 
             const data = await User.deleteById(id)
