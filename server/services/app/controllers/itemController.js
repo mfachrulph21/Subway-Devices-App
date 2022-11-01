@@ -40,7 +40,7 @@ class itemController {
     static async getItem (req, res, next) {
         try {
             let itemId = req.params.id
-
+            
             let item = await Item.findByPk(itemId, {
                 include : [
                     {model: Category}
