@@ -11,12 +11,13 @@ const server = new ApolloServer({
   resolvers : [
     itemResolver,
     userResolver
-  ]
+  ],
+  introspection: true
 });
 
 startStandaloneServer(server, {
   listen: {
-    port: 4000,
+    port: process.env.PORT || 4000,
   },
 }).then(({ url }) => {
   console.log(`🚀  Server ready at: ${url}`);

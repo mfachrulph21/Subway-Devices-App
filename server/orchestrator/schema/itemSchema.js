@@ -1,8 +1,11 @@
 const redis = require("../config/redis");
 const axios = require('axios');
 
-const appUrl = 'http://localhost:4002'
-const usersUrl = 'http://localhost:4001/users'
+// const appUrl = 'http://localhost:4002'
+const appUrl = 'https://react-native-server-app.herokuapp.com'
+
+// const usersUrl = 'http://localhost:4001/users'
+const usersUrl = 'https://react-native-server-users.herokuapp.com/users'
 
 
 const itemTypeDefs=`#graphql
