@@ -1,5 +1,5 @@
 const { MongoClient } = require("mongodb");
-const uri ="mongodb+srv://alulmuhammad:alul123@jakarta.zwiujj7.mongodb.net/test"
+const uri = process.env.MONGO_SECRET_KEY
 const dbName = 'subwhyDB'
 const client = new MongoClient(uri);
 let db;
